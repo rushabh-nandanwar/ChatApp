@@ -1,6 +1,7 @@
 import express from 'express'
 import authRoutes from './Routes/auth.route.js'
 import dotenv from 'dotenv'
+import cookieParser from "cookie-parser";
 import { connectDB } from './lib/db.js'
 
 dotenv.config()
@@ -11,6 +12,7 @@ connectDB()
 
 //Middleware
 app.use(express.json())
+app.use(cookieParser());
 
 //API Routes
 app.use("/api/auth", authRoutes);
