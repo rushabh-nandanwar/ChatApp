@@ -1,9 +1,7 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import cookieParser from "cookie-parser";
 
 dotenv.config();
-app.use(cookieParser());
 
 export const generateToken = (userID, res) => {
     
