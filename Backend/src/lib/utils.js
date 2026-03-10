@@ -1,3 +1,5 @@
+//JWT Token Generation and Cookie Setting
+
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
@@ -9,7 +11,7 @@ export const generateToken = (userID, res) => {
         expiresIn: "7d"
     })
 
-    res.cookie("token", token, {
+    res.cookie("jwt", token, {
         maxAge: 7 * 24 * 60 * 60 * 1000, //MS
         httpOnly: true, //Prevent XSS attacks
         sameSite: "strict", //Prevent CSRF attacks
